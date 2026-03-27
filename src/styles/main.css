@@ -1,0 +1,650 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-main: 'Inter', system-ui, sans-serif;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-main);
+  background: #0a0a0f;
+  color: white;
+  line-height: 1.5;
+}
+
+.app {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.app.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255,255,255,0.1);
+  border-top-color: #ffd700;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.date-badge {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.9);
+  z-index: 100;
+  text-transform: capitalize;
+}
+
+/* Advent Door */
+.advent-door {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Snow Effect */
+.snow-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.snowflake {
+  position: absolute;
+  top: -10px;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: snowfall linear infinite;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(-10px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Door Frame */
+.door-frame {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.door-decoration {
+  flex-shrink: 0;
+}
+
+.tree-svg {
+  width: 80px;
+  height: 160px;
+}
+
+.door-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+}
+
+/* Title Section */
+.title-section {
+  max-width: 600px;
+}
+
+.door-title {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 0 0 30px rgba(255,255,255,0.3);
+}
+
+.door-quote {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-style: italic;
+  opacity: 0.85;
+}
+
+/* Number Container */
+.number-container {
+  margin: 20px 0;
+}
+
+.day-circle {
+  position: relative;
+  width: clamp(180px, 35vw, 280px);
+  height: clamp(180px, 35vw, 280px);
+  border-radius: 50%;
+  border: 4px solid;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.day-number {
+  font-size: clamp(5rem, 15vw, 10rem);
+  font-weight: 900;
+  line-height: 1;
+  text-shadow: 0 0 40px currentColor;
+}
+
+.day-circle.special {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+.glow-ring {
+  position: absolute;
+  inset: -15px;
+  border: 2px solid;
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
+/* Fact Card */
+.fact-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 25px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  max-width: 450px;
+}
+
+.fact-icon {
+  font-size: 1.5rem;
+}
+
+.fact-card p {
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+/* Interaction Row */
+.interaction-row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.action-btn {
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.quiz-btn {
+  border: none;
+  color: white;
+}
+
+.quiz-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.qr-btn {
+  background: transparent;
+  border: 2px solid;
+}
+
+.qr-btn:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* Quiz Section */
+.quiz-section {
+  width: 100%;
+  max-width: 500px;
+}
+
+.quiz-card {
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 25px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.quiz-header {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.quiz-question {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quiz-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  background: rgba(255,255,255,0.08);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  color: white;
+}
+
+.quiz-option:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+.quiz-option.selected {
+  border-color: rgba(255,255,255,0.3);
+}
+
+.quiz-option.correct {
+  background: rgba(34, 197, 94, 0.3);
+  border-color: #22c55e;
+}
+
+.quiz-option.wrong {
+  background: rgba(239, 68, 68, 0.3);
+  border-color: #ef4444;
+}
+
+.option-marker {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.option-text {
+  flex: 1;
+}
+
+.check-mark, .x-mark {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.check-mark { color: #22c55e; }
+.x-mark { color: #ef4444; }
+
+.result-box {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.result-box.success {
+  background: rgba(34, 197, 94, 0.2);
+  border: 1px solid #22c55e;
+}
+
+.result-box.failure {
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid #ef4444;
+}
+
+.result-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.explanation {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-bottom: 15px;
+}
+
+.retry-btn {
+  padding: 8px 20px;
+  background: rgba(255,255,255,0.15);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.retry-btn:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+.no-quiz {
+  padding: 20px;
+  text-align: center;
+  opacity: 0.7;
+}
+
+/* QR Section */
+.qr-section {
+  margin-top: 20px;
+}
+
+.qr-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 15px;
+}
+
+.qr-label {
+  color: #1a1a2e;
+  font-weight: 600;
+}
+
+/* Christmas Special */
+.christmas-special {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.lights-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.light-bulb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px currentColor;
+}
+
+.merry-christmas {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffd700, #ff6b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Ambient Light */
+.ambient-light {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  opacity: 0.15;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Admin Panel */
+.admin-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.admin-toggle:hover {
+  background: rgba(255,255,255,0.15);
+  transform: rotate(45deg);
+}
+
+.admin-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 100vh;
+  background: linear-gradient(180deg, #1a1a2e 0%, #0f0f1a 100%);
+  z-index: 999;
+  padding: 25px;
+  box-shadow: -10px 0 40px rgba(0,0,0,0.5);
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.panel-header h2 {
+  font-size: 1.3rem;
+}
+
+.close-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.close-btn:hover {
+  background: rgba(255,0,0,0.3);
+}
+
+/* PIN Form */
+.pin-form {
+  text-align: center;
+}
+
+.pin-form p {
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+.pin-form input {
+  width: 100%;
+  padding: 15px;
+  border-radius: 12px;
+  border: 2px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.3);
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  letter-spacing: 10px;
+  margin-bottom: 15px;
+}
+
+.pin-form input:focus {
+  outline: none;
+  border-color: #ffd700;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  background: #ffd700;
+  border: none;
+  color: #1a1a2e;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  filter: brightness(1.1);
+}
+
+.error {
+  color: #ef4444;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.hint {
+  font-size: 0.8rem;
+  opacity: 0.5;
+  margin-top: 15px;
+}
+
+/* Day Picker */
+.day-picker p {
+  margin-bottom: 15px;
+}
+
+.day-picker strong {
+  color: #ffd700;
+  font-size: 1.5rem;
+}
+
+.day-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.day-btn {
+  aspect-ratio: 1;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.08);
+  border: 2px solid transparent;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.day-btn:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.day-btn.active {
+  background: #ffd700;
+  color: #1a1a2e;
+  border-color: #ffd700;
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.3);
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: rgba(239, 68, 68, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .door-frame {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .door-decoration {
+    display: none;
+  }
+
+  .day-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
