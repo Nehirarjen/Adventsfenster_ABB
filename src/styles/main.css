@@ -135,11 +135,14 @@ body {
 
 .door-decoration {
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .tree-svg {
-  width: 80px;
-  height: 160px;
+  width: 40px;
+  height: 80px;
 }
 
 .door-content {

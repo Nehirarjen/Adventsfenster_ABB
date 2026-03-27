@@ -53,17 +53,37 @@ const AdventDoor: React.FC<AdventDoorProps> = ({ day }) => {
 
       <div className="door-frame">
         <div className="door-decoration left">
-          <svg viewBox="0 0 60 120" className="tree-svg">
-            <polygon points="30,0 60,40 50,40 65,65 45,65 55,90 5,90 15,65 0,65 15,40 5,40" fill={accent} opacity="0.6"/>
-            <rect x="25" y="90" width="10" height="30" fill={accent}/>
-          </svg>
+          {[...Array(day)].map((_, i) => (
+            <motion.svg
+              key={`tree-left-${i}`}
+              viewBox="0 0 60 120"
+              className="tree-svg"
+              style={{ marginBottom: '-40px' }}
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 0.6 + (i * 0.1) }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+            >
+              <polygon points="30,0 60,40 50,40 65,65 45,65 55,90 5,90 15,65 0,65 15,40 5,40" fill={accent} opacity="0.6"/>
+              <rect x="25" y="90" width="10" height="30" fill={accent}/>
+            </motion.svg>
+          ))}
         </div>
 
         <div className="door-decoration right">
-          <svg viewBox="0 0 60 120" className="tree-svg">
-            <polygon points="30,0 60,40 50,40 65,65 45,65 55,90 5,90 15,65 0,65 15,40 5,40" fill={accent} opacity="0.6"/>
-            <rect x="25" y="90" width="10" height="30" fill={accent}/>
-          </svg>
+          {[...Array(day)].map((_, i) => (
+            <motion.svg
+              key={`tree-right-${i}`}
+              viewBox="0 0 60 120"
+              className="tree-svg"
+              style={{ marginBottom: '-40px' }}
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 0.6 + (i * 0.1) }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+            >
+              <polygon points="30,0 60,40 50,40 65,65 45,65 55,90 5,90 15,65 0,65 15,40 5,40" fill={accent} opacity="0.6"/>
+              <rect x="25" y="90" width="10" height="30" fill={accent}/>
+            </motion.svg>
+          ))}
         </div>
 
         <div className="door-content">

@@ -4,7 +4,7 @@ import AdminPanel from './components/AdminPanel';
 import './styles/main.css';
 
 function App() {
-  const [currentDay, setCurrentDay] = useState<number>(1);
+  const [selectedDay, setSelectedDay] = useState<number>(1);
   const [isLoaded, setIsLoaded] = useState(false);
   const [currentTime, setCurrentTime] = useState(new Date());
 
@@ -16,19 +16,20 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const today = new Date();
-    const dayOfMonth = today.getDate();
-    const month = today.getMonth();
-
-    const storedDay = localStorage.getItem('advent_day');
+    const storedSelectedDay = localStorage.getItem('advent_selected_day');
     
-    if (storedDay) {
-      const parsedDay = parseInt(storedDay, 10);
-      if (parsedDay >= 1 && parsedDay <= 24) {
-        setCurrentDay(parsedDay);
+    if (storedSelectedDay) {
+      const parsed = parseInt(storedSelectedDay, 10);
+      if (parsed >= 1 && parsed <= 24) {
+        setSelectedDay(parsed);
       }
-    } else if (month === 11 && dayOfMonth >= 1 && dayOfMonth <= 24) {
-      setCurrentDay(dayOfMonth);
+    } else {
+      const today = new Date();
+      const dayOfMonth = today.getDate();
+      const month = today.getMonth();
+      if (month === 11 && dayOfMonth >= 1 && dayOfMonth <= 24) {
+        setSelectedDay(dayOfMonth);
+      }
     }
     
     setIsLoaded(true);
@@ -36,9 +37,9 @@ function App() {
 
   useEffect(() => {
     if (isLoaded) {
-      localStorage.setItem('advent_day', currentDay.toString());
+      localStorage.setItem('advent_selected_day', selectedDay.toString());
     }
-  }, [currentDay, isLoaded]);
+  }, [selectedDay, isLoaded]);
 
   const getCurrentDate = () => {
     const today = new Date();
@@ -74,10 +75,10 @@ function App() {
         <span className="greeting">{getGreeting()}</span>
         <span className="date">{getCurrentDate()}</span>
       </div>
-      <AdventDoor day={currentDay} />
+      <AdventDoor day={selectedDay} />
       <AdminPanel
-        currentDay={currentDay}
-        onDayChange={setCurrentDay}
+        currentDay={selectedDay}
+        onDayChange={setSelectedDay}
       />
       <div className="app-footer">
         Digitales Adventsfenster 2026 | {formatTime()}
