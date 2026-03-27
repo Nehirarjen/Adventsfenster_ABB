@@ -58,7 +58,6 @@ const AdventDoor: React.FC<AdventDoorProps> = ({ day }) => {
               key={`tree-left-${i}`}
               viewBox="0 0 60 120"
               className="tree-svg"
-              style={{ marginBottom: '-40px' }}
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 0.6 + (i * 0.1) }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
@@ -75,7 +74,6 @@ const AdventDoor: React.FC<AdventDoorProps> = ({ day }) => {
               key={`tree-right-${i}`}
               viewBox="0 0 60 120"
               className="tree-svg"
-              style={{ marginBottom: '-40px' }}
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 0.6 + (i * 0.1) }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
@@ -135,14 +133,14 @@ const AdventDoor: React.FC<AdventDoorProps> = ({ day }) => {
             <button
               className="action-btn quiz-btn"
               style={{ backgroundColor: accent }}
-              onClick={() => setShowQuiz(!showQuiz)}
+              onClick={() => { setShowQuiz(!showQuiz); setShowQR(false); }}
             >
               {showQuiz ? 'Schliessen' : 'Wissensquiz'}
             </button>
             <button
               className="action-btn qr-btn"
               style={{ borderColor: accent, color: accent }}
-              onClick={() => setShowQR(!showQR)}
+              onClick={() => { setShowQR(!showQR); setShowQuiz(false); }}
             >
               QR-Code
             </button>
