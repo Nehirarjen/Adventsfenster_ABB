@@ -102,7 +102,7 @@ const AdventDoor: React.FC<AdventDoorProps> = ({ day }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            <span className="fact-icon">💡</span>
+            <span className="fact-icon">{dayData.emoji}</span>
             <p>{dayData.fact}</p>
           </motion.div>
 
