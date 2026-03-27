@@ -75,6 +75,9 @@ function App() {
         currentDay={currentDay}
         onDayChange={setCurrentDay}
       />
+      <div className="app-footer">
+        Digitales Adventsfenster 2026
+      </div>
     </div>
   );
 }
