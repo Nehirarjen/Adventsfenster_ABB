@@ -56,6 +56,10 @@ function App() {
     return 'Guten Abend';
   };
 
+  const formatTime = () => {
+    return currentTime.toLocaleTimeString('de-CH', { hour: '2-digit', minute: '2-digit' });
+  };
+
   if (!isLoaded) {
     return (
       <div className="app loading">
@@ -76,7 +80,7 @@ function App() {
         onDayChange={setCurrentDay}
       />
       <div className="app-footer">
-        Digitales Adventsfenster 2026
+        Digitales Adventsfenster 2026 | {formatTime()}
       </div>
     </div>
   );
