@@ -144,10 +144,11 @@ const AdventDoor: React.FC<AdventDoorProps> = ({ day }) => {
           <AnimatePresence>
             {showQR && (
               <motion.div
+                key="qr-code"
                 className="qr-section"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.9, height: 0 }}
+                animate={{ opacity: 1, scale: 1, height: 'auto' }}
+                exit={{ opacity: 0, scale: 0.9, height: 0 }}
                 transition={{ duration: 0.3 }}
               >
                 <QRCode day={day} size={180} color={accent} />
