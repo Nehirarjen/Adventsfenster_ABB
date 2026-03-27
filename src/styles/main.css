@@ -302,24 +302,26 @@ body {
 .quiz-section {
   width: 100%;
   max-width: 500px;
-  max-height: 400px;
+  max-height: 450px;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: #AAE7FA rgba(0,0,0,0.3);
+  scrollbar-color: #AAE7FA #0A2A59;
 }
 
 .quiz-section::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
+  position: absolute;
+  right: 0;
 }
 
 .quiz-section::-webkit-scrollbar-track {
-  background: rgba(0,0,0,0.2);
-  border-radius: 3px;
+  background: #0A2A59;
+  border-radius: 4px;
 }
 
 .quiz-section::-webkit-scrollbar-thumb {
   background: #AAE7FA;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 .quiz-section::-webkit-scrollbar-thumb:hover {
