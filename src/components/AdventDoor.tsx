@@ -117,7 +117,7 @@ const AdventDoor: React.FC<AdventDoorProps> = ({ day }) => {
               style={{ backgroundColor: accent }}
               onClick={() => setShowQuiz(!showQuiz)}
             >
-              {showQuiz ? 'Schliessen' : 'Quiz'}
+              {showQuiz ? 'Schliessen' : 'Wissensquiz'}
             </button>
             <button
               className="action-btn qr-btn"
