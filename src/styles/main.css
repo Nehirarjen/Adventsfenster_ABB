@@ -152,6 +152,28 @@ body {
   max-height: 90vh;
   overflow-y: auto;
   padding: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: #AAE7FA #0A2A59;
+}
+
+.door-content::-webkit-scrollbar {
+  width: 8px;
+  position: absolute;
+  right: 0;
+}
+
+.door-content::-webkit-scrollbar-track {
+  background: #0A2A59;
+  border-radius: 4px;
+}
+
+.door-content::-webkit-scrollbar-thumb {
+  background: #AAE7FA;
+  border-radius: 4px;
+}
+
+.door-content::-webkit-scrollbar-thumb:hover {
+  background: #FF8A1C;
 }
 
 /* Title Section */
@@ -280,6 +302,30 @@ body {
 .quiz-section {
   width: 100%;
   max-width: 500px;
+  max-height: 400px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #AAE7FA #0A2A59;
+}
+
+.quiz-section::-webkit-scrollbar {
+  width: 6px;
+  position: absolute;
+  right: 0;
+}
+
+.quiz-section::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+
+.quiz-section::-webkit-scrollbar-thumb {
+  background: #AAE7FA;
+  border-radius: 3px;
+}
+
+.quiz-section::-webkit-scrollbar-thumb:hover {
+  background: #FF8A1C;
 }
 
 .quiz-card {
@@ -416,7 +462,30 @@ body {
 .qr-section {
   margin-top: 20px;
   max-width: 100%;
-  overflow: visible;
+  overflow-y: auto;
+  max-height: 400px;
+  scrollbar-width: thin;
+  scrollbar-color: #AAE7FA #0A2A59;
+}
+
+.qr-section::-webkit-scrollbar {
+  width: 6px;
+  position: absolute;
+  right: 0;
+}
+
+.qr-section::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+
+.qr-section::-webkit-scrollbar-thumb {
+  background: #AAE7FA;
+  border-radius: 3px;
+}
+
+.qr-section::-webkit-scrollbar-thumb:hover {
+  background: #FF8A1C;
 }
 
 .qr-wrapper {
