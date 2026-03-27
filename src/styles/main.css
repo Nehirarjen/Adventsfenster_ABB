@@ -304,6 +304,7 @@ body {
   max-width: 500px;
   max-height: 450px;
   overflow-y: auto;
+  position: relative;
   scrollbar-width: thin;
   scrollbar-color: #AAE7FA #0A2A59;
 }
@@ -312,6 +313,8 @@ body {
   width: 8px;
   position: absolute;
   right: 0;
+  top: 0;
+  bottom: 0;
 }
 
 .quiz-section::-webkit-scrollbar-track {
