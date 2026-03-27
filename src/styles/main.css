@@ -302,6 +302,28 @@ body {
 .quiz-section {
   width: 100%;
   max-width: 500px;
+  max-height: 400px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #AAE7FA rgba(0,0,0,0.3);
+}
+
+.quiz-section::-webkit-scrollbar {
+  width: 6px;
+}
+
+.quiz-section::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+
+.quiz-section::-webkit-scrollbar-thumb {
+  background: #AAE7FA;
+  border-radius: 3px;
+}
+
+.quiz-section::-webkit-scrollbar-thumb:hover {
+  background: #FF8A1C;
 }
 
 .quiz-card {
