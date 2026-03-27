@@ -73,7 +73,6 @@ const AdventDoor: React.FC<AdventDoorProps> = ({ day }) => {
             transition={{ duration: 0.6 }}
           >
             <h1 className="door-title">{dayData.title}</h1>
-            <blockquote className="door-quote">"{dayData.quote}"</blockquote>
           </motion.div>
 
           <motion.div
@@ -150,7 +149,7 @@ const AdventDoor: React.FC<AdventDoorProps> = ({ day }) => {
             }}
             style={{ display: showQR ? 'block' : 'none' }}
           >
-            <QRCode day={day} size={140} color={accent} />
+            <QRCode day={day} size={180} color={accent} />
           </motion.div>
 
           {isSpecialDay && (
