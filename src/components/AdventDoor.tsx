@@ -128,18 +128,20 @@ const AdventDoor: React.FC<AdventDoorProps> = ({ day }) => {
             </button>
           </motion.div>
 
-          <motion.div
-            className="quiz-section"
-            initial={false}
-            animate={{
-              height: showQuiz ? 'auto' : 0,
-              opacity: showQuiz ? 1 : 0
-            }}
-            transition={{ duration: 0.3 }}
-            style={{ overflow: 'hidden' }}
-          >
-            {showQuiz && <Quiz quiz={dayData.quiz} />}
-          </motion.div>
+          <AnimatePresence>
+            {showQuiz && (
+              <motion.div
+                key="quiz"
+                className="quiz-section"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Quiz quiz={dayData.quiz} />
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           <AnimatePresence>
             {showQR && (
