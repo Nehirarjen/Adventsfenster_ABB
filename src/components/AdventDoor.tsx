@@ -18,7 +18,6 @@ const generateSnowflakes = (count: number) => {
 };
 
 const AdventDoor: React.FC<AdventDoorProps> = ({ day }) => {
-  const [showQuiz, setShowQuiz] = useState(false);
   const [showQR, setShowQR] = useState(false);
   const [snowflakes] = useState(() => generateSnowflakes(60));
   
@@ -52,26 +51,10 @@ const AdventDoor: React.FC<AdventDoorProps> = ({ day }) => {
       </div>
 
       <div className="door-frame">
-        <div className="door-decoration left">
+        <div className="door-decoration">
           {[...Array(day)].map((_, i) => (
             <motion.svg
-              key={`tree-left-${i}`}
-              viewBox="0 0 60 120"
-              className="tree-svg"
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: 1, opacity: 0.6 + (i * 0.1) }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-            >
-              <polygon points="30,0 60,40 50,40 65,65 45,65 55,90 5,90 15,65 0,65 15,40 5,40" fill={accent} opacity="0.6"/>
-              <rect x="25" y="90" width="10" height="30" fill={accent}/>
-            </motion.svg>
-          ))}
-        </div>
-
-        <div className="door-decoration right">
-          {[...Array(day)].map((_, i) => (
-            <motion.svg
-              key={`tree-right-${i}`}
+              key={`tree-${i}`}
               viewBox="0 0 60 120"
               className="tree-svg"
               initial={{ scale: 0, opacity: 0 }}
@@ -131,47 +114,32 @@ const AdventDoor: React.FC<AdventDoorProps> = ({ day }) => {
             transition={{ delay: 0.6 }}
           >
             <button
-              className="action-btn quiz-btn"
-              style={{ backgroundColor: accent }}
-              onClick={() => { setShowQuiz(!showQuiz); setShowQR(false); }}
-            >
-              {showQuiz ? 'Schliessen' : 'Wissensquiz'}
-            </button>
-            <button
               className="action-btn qr-btn"
-              style={{ borderColor: accent, color: accent }}
-              onClick={() => { setShowQR(!showQR); setShowQuiz(false); }}
+              style={{ backgroundColor: accent }}
+              onClick={() => setShowQR(!showQR)}
             >
-              QR-Code
+              {showQR ? 'Schliessen' : 'QR-Code scannen'}
             </button>
           </motion.div>
 
           <AnimatePresence>
-            {showQuiz && (
-              <motion.div
-                key="quiz"
-                className="quiz-section"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Quiz quiz={dayData.quiz} />
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          <AnimatePresence>
             {showQR && (
               <motion.div
-                key="qr-code"
+                key="qr-quiz"
                 className="qr-section"
-                initial={{ opacity: 0, scale: 0.9, height: 0 }}
-                animate={{ opacity: 1, scale: 1, height: 'auto' }}
-                exit={{ opacity: 0, scale: 0.9, height: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
                 transition={{ duration: 0.3 }}
               >
-                <QRCode day={day} size={180} color={accent} />
+                <div className="qr-quiz-container">
+                  <div className="qr-wrapper">
+                    <QRCode day={day} size={180} color="#0A2A59" />
+                  </div>
+                  <div className="quiz-card">
+                    <Quiz quiz={dayData.quiz} />
+                  </div>
+                </div>
               </motion.div>
             )}
           </AnimatePresence>
