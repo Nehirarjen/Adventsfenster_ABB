@@ -27,7 +27,7 @@ const AdventDoor: React.FC<AdventDoorProps> = ({ day }) => {
   const accent = getThemeAccent(day);
   const isSpecialDay = day === 24;
 
-  const confettiColors = ['#FFD700', '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#FF9A9E'];
+  const confettiColors = ['#FFFFFF', '#AAE7FA', '#FF8A1C', '#AAE7FA', '#FFFFFF', '#FF8A1C', '#AAE7FA'];
 
   return (
     <div 
@@ -44,7 +44,8 @@ const AdventDoor: React.FC<AdventDoorProps> = ({ day }) => {
             style={{
               left: `${flake.x}%`,
               animationDelay: `${flake.delay}s`,
-              animationDuration: `${flake.duration}s`
+              animationDuration: `${flake.duration}s`,
+              background: '#AAE7FA'
             }}
           />
         ))}
@@ -54,14 +55,14 @@ const AdventDoor: React.FC<AdventDoorProps> = ({ day }) => {
         <div className="door-decoration left">
           <svg viewBox="0 0 60 120" className="tree-svg">
             <polygon points="30,0 60,40 50,40 65,65 45,65 55,90 5,90 15,65 0,65 15,40 5,40" fill={accent} opacity="0.6"/>
-            <rect x="25" y="90" width="10" height="30" fill="#8B4513"/>
+            <rect x="25" y="90" width="10" height="30" fill={accent}/>
           </svg>
         </div>
 
         <div className="door-decoration right">
           <svg viewBox="0 0 60 120" className="tree-svg">
             <polygon points="30,0 60,40 50,40 65,65 45,65 55,90 5,90 15,65 0,65 15,40 5,40" fill={accent} opacity="0.6"/>
-            <rect x="25" y="90" width="10" height="30" fill="#8B4513"/>
+            <rect x="25" y="90" width="10" height="30" fill={accent}/>
           </svg>
         </div>
 
