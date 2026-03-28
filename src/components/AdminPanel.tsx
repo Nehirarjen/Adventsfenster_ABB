@@ -65,7 +65,6 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ currentDay, onDayChange }) => {
               />
               <button className="submit-btn" onClick={handlePin}>OK</button>
               {error && <p className="error">{error}</p>}
-              <p className="hint">Standard: 1234</p>
             </div>
           ) : (
             <div className="day-picker">

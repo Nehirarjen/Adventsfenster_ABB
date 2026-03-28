@@ -27,7 +27,7 @@ export const adventDays: AdventDayData = {
     theme: 'winter-night',
     backgroundColor: '#0A2A59',
     accentColor: '#AAE7FA',
-    emoji: '🎁',
+    emoji: '',
     fact: 'Der Adventskranz wurde 1839 in Hamburg erfunden.',
     quiz: {
       question: 'Wann beginnt die Adventszeit?',
@@ -42,7 +42,7 @@ export const adventDays: AdventDayData = {
     theme: 'gold',
     backgroundColor: '#0A2A59',
     accentColor: '#FF8A1C',
-    emoji: '📚',
+    emoji: '',
     fact: 'Lernen ist ein lebenslanger Prozess.',
     quiz: {
       question: 'Was bedeutet lebenslanges Lernen?',
@@ -57,7 +57,7 @@ export const adventDays: AdventDayData = {
     theme: 'electric',
     backgroundColor: '#0A2A59',
     accentColor: '#AAE7FA',
-    emoji: '⚡',
+    emoji: '',
     fact: 'Elektrizität wurde erst im 18. Jahrhundert verstanden.',
     quiz: {
       question: 'Wer erfand die Batterie?',
@@ -72,7 +72,7 @@ export const adventDays: AdventDayData = {
     theme: 'purple',
     backgroundColor: '#0A2A59',
     accentColor: '#FF8A1C',
-    emoji: '💻',
+    emoji: '',
     fact: 'Die erste Programmiersprache wurde 1950 erfunden.',
     quiz: {
       question: 'Welche Sprache ist die älteste?',
@@ -87,7 +87,7 @@ export const adventDays: AdventDayData = {
     theme: 'green',
     backgroundColor: '#0A2A59',
     accentColor: '#AAE7FA',
-    emoji: '🌱',
+    emoji: '',
     fact: 'Erneuerbare Energien wachsen jährlich um 5%.',
     quiz: {
       question: 'Was ist Solarenergie?',
@@ -102,7 +102,7 @@ export const adventDays: AdventDayData = {
     theme: 'cyber',
     backgroundColor: '#0A2A59',
     accentColor: '#FF8A1C',
-    emoji: '🔗',
+    emoji: '',
     fact: 'Das Internet verbindet Milliarden von Geräten.',
     quiz: {
       question: 'Was bedeutet IoT?',
@@ -117,7 +117,7 @@ export const adventDays: AdventDayData = {
     theme: 'steel',
     backgroundColor: '#0A2A59',
     accentColor: '#AAE7FA',
-    emoji: '⚙️',
+    emoji: '',
     fact: 'CNC-Maschinen arbeiten mit Mikrometer-Präzision.',
     quiz: {
       question: 'Was ist CNC?',
@@ -132,7 +132,7 @@ export const adventDays: AdventDayData = {
     theme: 'blue',
     backgroundColor: '#0A2A59',
     accentColor: '#FF8A1C',
-    emoji: '🤖',
+    emoji: '',
     fact: 'Industrieroboter arbeiten 24/7 ohne Pause.',
     quiz: {
       question: 'Was automatisiert einen Produktionsprozess?',
@@ -147,7 +147,7 @@ export const adventDays: AdventDayData = {
     theme: 'teal',
     backgroundColor: '#0A2A59',
     accentColor: '#AAE7FA',
-    emoji: '🏢',
+    emoji: '',
     fact: 'Smart Buildings sparen bis zu 40% Energie.',
     quiz: {
       question: 'Was macht ein Gebäude smart?',
@@ -162,7 +162,7 @@ export const adventDays: AdventDayData = {
     theme: 'amber',
     backgroundColor: '#0A2A59',
     accentColor: '#FF8A1C',
-    emoji: '💡',
+    emoji: '',
     fact: 'Täglich werden 2.5 Trillionen Bytes Daten erzeugt.',
     quiz: {
       question: 'Was ist Big Data?',
@@ -177,7 +177,7 @@ export const adventDays: AdventDayData = {
     theme: 'red',
     backgroundColor: '#0A2A59',
     accentColor: '#AAE7FA',
-    emoji: '🛡️',
+    emoji: '',
     fact: 'Sicherheitsvorschriften retten täglich Leben.',
     quiz: {
       question: 'Was ist die erste Regel bei Elektrounfällen?',
@@ -192,7 +192,7 @@ export const adventDays: AdventDayData = {
     theme: 'wave',
     backgroundColor: '#0A2A59',
     accentColor: '#FF8A1C',
-    emoji: '🔌',
+    emoji: '',
     fact: 'Netzfrequenz in Europa: 50 Hz.',
     quiz: {
       question: 'Was misst die Netzqualität?',
@@ -207,7 +207,7 @@ export const adventDays: AdventDayData = {
     theme: 'navy',
     backgroundColor: '#0A2A59',
     accentColor: '#AAE7FA',
-    emoji: '📊',
+    emoji: '',
     fact: 'Business Engineers kombinieren drei Disziplinen.',
     quiz: {
       question: 'Was kombiniert Business Engineering?',
@@ -222,7 +222,7 @@ export const adventDays: AdventDayData = {
     theme: 'violet',
     backgroundColor: '#0A2A59',
     accentColor: '#FF8A1C',
-    emoji: '✨',
+    emoji: '',
     fact: 'Guter Code ist selbstdokumentierend.',
     quiz: {
       question: 'Was ist Clean Code?',
@@ -237,7 +237,7 @@ export const adventDays: AdventDayData = {
     theme: 'emerald',
     backgroundColor: '#0A2A59',
     accentColor: '#AAE7FA',
-    emoji: '📈',
+    emoji: '',
     fact: 'Prozessoptimierung spart Zeit und Geld.',
     quiz: {
       question: 'Was ist Prozessoptimierung?',
@@ -252,7 +252,7 @@ export const adventDays: AdventDayData = {
     theme: 'slate',
     backgroundColor: '#0A2A59',
     accentColor: '#FF8A1C',
-    emoji: '🧠',
+    emoji: '',
     fact: 'Systemdenken löst komplexe Probleme.',
     quiz: {
       question: 'Was ist ein System?',
@@ -267,7 +267,7 @@ export const adventDays: AdventDayData = {
     theme: 'dark',
     backgroundColor: '#0A2A59',
     accentColor: '#AAE7FA',
-    emoji: '🔒',
+    emoji: '',
     fact: 'Cyberangriffe werden täglich raffinierter.',
     quiz: {
       question: 'Was ist Phishing?',
@@ -282,7 +282,7 @@ export const adventDays: AdventDayData = {
     theme: 'sky',
     backgroundColor: '#0A2A59',
     accentColor: '#FF8A1C',
-    emoji: '☁️',
+    emoji: '',
     fact: 'Cloud-Dienste wachsen exponentiell.',
     quiz: {
       question: 'Was bietet Cloud Computing?',
@@ -297,7 +297,7 @@ export const adventDays: AdventDayData = {
     theme: 'pink',
     backgroundColor: '#0A2A59',
     accentColor: '#AAE7FA',
-    emoji: '📉',
+    emoji: '',
     fact: 'Data Science verändert alle Branchen.',
     quiz: {
       question: 'Was ist Machine Learning?',
@@ -312,7 +312,7 @@ export const adventDays: AdventDayData = {
     theme: 'solar',
     backgroundColor: '#0A2A59',
     accentColor: '#FF8A1C',
-    emoji: '🌞',
+    emoji: '',
     fact: 'Die Schweiz will bis 2050 CO2-neutral sein.',
     quiz: {
       question: 'Was ist erneuerbare Energie?',
@@ -327,7 +327,7 @@ export const adventDays: AdventDayData = {
     theme: 'blue-gray',
     backgroundColor: '#0A2A59',
     accentColor: '#AAE7FA',
-    emoji: '✅',
+    emoji: '',
     fact: 'ISO 9001 ist der bekannteste Qualitätsstandard.',
     quiz: {
       question: 'Was bedeutet ISO?',
@@ -342,7 +342,7 @@ export const adventDays: AdventDayData = {
     theme: 'indigo',
     backgroundColor: '#0A2A59',
     accentColor: '#FF8A1C',
-    emoji: '📋',
+    emoji: '',
     fact: 'Projekte mit Plan haben 3x höhere Erfolgsrate.',
     quiz: {
       question: 'Was ist ein Meilenstein?',
@@ -357,7 +357,7 @@ export const adventDays: AdventDayData = {
     theme: 'warm',
     backgroundColor: '#0A2A59',
     accentColor: '#AAE7FA',
-    emoji: '🎄',
+    emoji: '',
     fact: 'Weihnachten verbindet Tradition und Familie.',
     quiz: {
       question: 'Wann ist Heiligabend?',
@@ -372,7 +372,7 @@ export const adventDays: AdventDayData = {
     theme: 'christmas',
     backgroundColor: '#0A2A59',
     accentColor: '#FF8A1C',
-    emoji: '🎅',
+    emoji: '',
     fact: 'Ein magischer Tag voller Freude und Familie.',
     quiz: {
       question: 'Was symbolisiert der Weihnachtsbaum?',

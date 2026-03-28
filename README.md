@@ -7,7 +7,7 @@ Ein interaktives digitales Adventsfenster mit 24 Tagen, basierend auf dem Figma-
 - **24-Tage Adventskalender** mit grossem zentralen Design
 - **Admin-Panel** (PIN: 1234) für Tagesauswahl
 - **Interaktive Quizfragen** mit Erklärungen
-- **QR-Code Generierung** für Schüler-Identifikation
+- **QR-Code Generierung** für Schüler-Identifikation (leider ist es uns zeitlich noch nicht gelungen, die fertigen Quizzes zu implementieren, aber sie wären bereit.) 
 - **Schnee-Animation** und festliche Lichter
 - **24. Dezember Spezial** mit animierten Weihnachtslichtern
 - **Responsive Design** für alle Bildschirmgrössen
@@ -26,7 +26,7 @@ Das Design folgt dem Figma-Mockup mit:
 - Tannenbäumen als Dekoration
 - Schnee-Animation
 - Festlichen Farben pro Tag
-- Klarem, minimalistischem Look
+- Klarem, minimalistischem Look~~~~
 
 ## Technologien
 
@@ -48,3 +48,8 @@ npm run build
 ```
 
 Die Dateien im `dist/` Ordner auf einen Webserver deployen.
+
+
+
+## Admin
+- Admin-Pin : 1234

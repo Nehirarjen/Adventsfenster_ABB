@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Quiz from './Quiz';
 import QRCode from './QRCode';
 import { adventDays, getThemeBackground, getThemeAccent } from '../data/adventDays';
 
@@ -103,7 +102,6 @@ const AdventDoor: React.FC<AdventDoorProps> = ({ day }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            <span className="fact-icon">{dayData.emoji}</span>
             <p>{dayData.fact}</p>
           </motion.div>
 
@@ -125,21 +123,14 @@ const AdventDoor: React.FC<AdventDoorProps> = ({ day }) => {
           <AnimatePresence>
             {showQR && (
               <motion.div
-                key="qr-quiz"
+                key="qr-display"
                 className="qr-section"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 20 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="qr-quiz-container">
-                  <div className="qr-wrapper">
-                    <QRCode day={day} size={180} color="#0A2A59" />
-                  </div>
-                  <div className="quiz-card">
-                    <Quiz quiz={dayData.quiz} />
-                  </div>
-                </div>
+                <QRCode day={day} size={180} />
               </motion.div>
             )}
           </AnimatePresence>

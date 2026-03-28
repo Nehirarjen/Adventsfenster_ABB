@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import AdventDoor from './components/AdventDoor';
 import AdminPanel from './components/AdminPanel';
+import QuizPage from './QuizPage';
 import './styles/main.css';
 
 function App() {
@@ -70,20 +72,25 @@ function App() {
   }
 
   return (
-    <div className="app">
-      <div className="date-badge">
-        <span className="greeting">{getGreeting()}</span>
-        <span className="date">{getCurrentDate()}</span>
-      </div>
-      <AdventDoor day={selectedDay} />
-      <AdminPanel
-        currentDay={selectedDay}
-        onDayChange={setSelectedDay}
-      />
-      <div className="app-footer">
-        Digitales Adventsfenster 2026 | {formatTime()}
-      </div>
-    </div>
+    <Routes>
+      <Route path="/" element={
+        <div className="app">
+          <div className="date-badge">
+            <span className="greeting">{getGreeting()}</span>
+            <span className="date">{getCurrentDate()}</span>
+          </div>
+          <AdventDoor day={selectedDay} />
+          <AdminPanel
+            currentDay={selectedDay}
+            onDayChange={setSelectedDay}
+          />
+          <div className="app-footer">
+            Digitales Adventsfenster 2026 | {formatTime()}
+          </div>
+        </div>
+      } />
+      <Route path="/quiz" element={<QuizPage />} />
+    </Routes>
   );
 }
 

@@ -3,27 +3,22 @@ import { QRCodeSVG } from 'qrcode.react';
 interface QRCodeProps {
   day: number;
   size?: number;
-  color?: string;
 }
 
-const QRCode: React.FC<QRCodeProps> = ({ day, size = 120, color = '#FFFFFF' }) => {
-  const qrValue = JSON.stringify({
-    type: 'AdventCalendar',
-    day,
-    year: new Date().getFullYear()
-  });
+const QRCode: React.FC<QRCodeProps> = ({ day, size = 180 }) => {
+  const quizUrl = `${window.location.origin}/quiz?day=${day}`;
 
   return (
-    <div className="qr-wrapper">
+    <a href={quizUrl} className="qr-wrapper qr-link">
       <QRCodeSVG
-        value={qrValue}
+        value={quizUrl}
         size={size}
         bgColor="transparent"
-        fgColor={color}
+        fgColor="#0A2A59"
         level="M"
       />
       <p className="qr-label">Tag {day}</p>
-    </div>
+    </a>
   );
 };
 
